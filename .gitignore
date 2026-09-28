@@ -49,3 +49,7 @@ wandb/
 config.local.yaml
 config.local.yml
 config.local.json
+
+
+# Ignore all files inside any data folder
+**/data/**
