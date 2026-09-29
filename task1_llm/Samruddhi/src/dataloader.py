@@ -25,7 +25,7 @@ def create_dataloaders(
     train_loader = DataLoader(
         train_dataset,
         batch_size=batch_size,
-        shuffle=True,
+        shuffle=False,
         drop_last=True,
         num_workers=0,
         pin_memory=use_gpu
@@ -44,6 +44,7 @@ def create_dataloaders(
 
 
 if __name__ == "__main__":
+
     project_dir = Path(
         r"C:\Users\samruddhi\Desktop\Sam\Gen_AI_Lab1"
     )
@@ -54,11 +55,10 @@ if __name__ == "__main__":
         batch_size=32
     )
 
-    # Inspect one batch
     input_batch, target_batch = next(iter(train_loader))
 
-    print("DataLoaders created successfully.")
+    print("DataLoader test completed.")
+    print(f"Training batches per epoch: {len(train_loader):,}")
+    print(f"Validation batches: {len(val_loader):,}")
     print(f"Input batch shape: {input_batch.shape}")
     print(f"Target batch shape: {target_batch.shape}")
-    print(f"Number of training batches: {len(train_loader):,}")
-    print(f"Number of validation batches: {len(val_loader):,}")
