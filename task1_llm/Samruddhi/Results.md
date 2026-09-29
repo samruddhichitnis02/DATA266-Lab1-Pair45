@@ -69,3 +69,69 @@ The generated sample was saved in:
 
 ```text
 outputs/generated_sample_temperature_0_8.txt
+```
+
+## Learning-Rate Scheduling Experiment
+
+The original model used a fixed learning rate for 21 epochs. A separate
+experiment was then performed using the existing trained model as the starting
+checkpoint. The model architecture, dataset, batch size, optimizer type, and
+weight decay were kept the same.
+
+The experiment used:
+
+- Starting checkpoint: Best model from the original 21-epoch run
+- Additional training: 11 epochs
+- Optimizer: AdamW
+- Initial learning rate: 0.0003
+- Warm-up period: 2 epochs
+- Learning-rate schedule: Linear warm-up followed by cosine decay
+- Weight decay: 0.01
+- Gradient clipping: 1.0
+
+The scheduled model achieved its best validation loss during experiment epoch
+10. The experiment did not restart training from random weights; it continued
+from the previously trained model.
+
+## Comparison with the Original Model
+
+| Metric | Original model | Scheduled experiment |
+|---|---:|---:|
+| Training setup | 21 epochs, fixed learning rate | 11 additional epochs, warm-up and cosine decay |
+| Best validation loss | 0.5496 | 0.5280 |
+| Final validation loss | 0.5496 | 0.5281 |
+| Total training epochs | 21 | 32 cumulative epochs |
+
+The scheduled experiment reduced the best validation loss from 0.5496 to
+0.5280. This is an improvement of approximately 0.0216, or 3.94%. The result
+indicates that learning-rate warm-up and cosine decay helped the model improve
+its performance on unseen validation data.
+
+## Scheduled Experiment Performance
+
+- Total experiment training time: 2,551.36 seconds, approximately 42.52 minutes
+- Training throughput: 387,965.63 tokens per second
+- Peak GPU memory during the experiment: 3.911 GB
+- Best scheduled-experiment validation loss: 0.52797
+- Best scheduled-experiment epoch: 10 of 11
+
+The experiment metrics were saved in:
+
+```text
+outputs/learning_rate_experiment/learning_rate_experiment_metrics.csv
+```
+
+The experiment checkpoint was saved in:
+
+```text
+checkpoints/learning_rate_experiment/best_model_with_scheduler.pt
+```
+
+## Conclusion
+
+The final selected model is the best checkpoint from the learning-rate
+scheduling experiment because it achieved the lowest validation loss. The
+experiment also satisfies the requirement to evaluate learning-rate warm-up
+and scheduling. The original model and the scheduled model used the same GPT
+architecture, so the improvement is attributed to the training schedule
+rather than a change in model size or structure.
