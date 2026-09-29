@@ -1,0 +1,12 @@
+metric,value
+additional_epochs,11
+warmup_epochs,2
+best_validation_loss,0.5279731512069702
+best_epoch,10
+final_training_loss,0.477348891181137
+final_validation_loss,0.5280879712104798
+total_training_time_seconds,2551.358380794525
+training_tokens_per_second,387965.62938827573
+peak_training_memory_gb,3.9109859466552734
+initial_learning_rate,0.0003
+weight_decay,0.01
