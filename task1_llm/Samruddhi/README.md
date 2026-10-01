@@ -1,17 +1,9 @@
-# DATA266 Lab 1 — Pair 45
-
 ## Task 1: Character-Level GPT on TinyStories
 
 This project implements a character-level decoder-only GPT language model from scratch using the TinyStories dataset. The model learns to predict the next character from the characters that appear before it.
 
-Repository: `DATA266-Lab1-Pair45`
 
-Team members:
-
-- Nikhil Kanaparthi
-- Samruddhi Suresh Chitnis
-
-## Project Objective
+## Objective
 
 The objective was to build, train, evaluate, and analyze a small GPT-style language model without using a prebuilt Transformer or attention layer.
 
