@@ -1,0 +1,12 @@
+device=mps
+parameter_count=3254016
+{"epoch": 1, "train_loss": 2.1227434327491035, "loss": 1.2348722781345343, "perplexity": 3.437939392630008, "bpc": 1.7815441117959494, "top1_next_char_accuracy": 0.619968359375, "grad_norm_mean": 1.2154307871084524}
+{"epoch": 2, "train_loss": 1.1478701570593846, "loss": 0.9551742445131776, "perplexity": 2.599123426461757, "bpc": 1.3780251457440236, "top1_next_char_accuracy": 0.700983203125, "grad_norm_mean": 0.8360324550041082}
+{"epoch": 3, "train_loss": 0.9867964640917567, "loss": 0.8773348221353664, "perplexity": 2.4044827848029127, "bpc": 1.265726597093894, "top1_next_char_accuracy": 0.724261328125, "grad_norm_mean": 0.6716256917705158}
+{"epoch": 4, "train_loss": 0.9213680447635175, "loss": 0.8338906267646012, "perplexity": 2.3022585670226188, "bpc": 1.2030498718770797, "top1_next_char_accuracy": 0.73720234375, "grad_norm_mean": 0.6101464669214787}
+{"epoch": 5, "train_loss": 0.8822897335923183, "loss": 0.8072371160148815, "perplexity": 2.2417058495380977, "bpc": 1.1645969840961783, "top1_next_char_accuracy": 0.74558359375, "grad_norm_mean": 0.5816764903999031}
+{"epoch": 6, "train_loss": 0.8530669205095702, "loss": 0.782424526609433, "perplexity": 2.1867677199447138, "bpc": 1.1287999844093237, "top1_next_char_accuracy": 0.753308984375, "grad_norm_mean": 0.5740526360498356}
+{"epoch": 7, "train_loss": 0.8311572301410668, "loss": 0.7654987733075573, "perplexity": 2.150066503039673, "bpc": 1.1043812840573979, "top1_next_char_accuracy": 0.7583921875, "grad_norm_mean": 0.5766510215998458}
+{"epoch": 8, "train_loss": 0.814088278638958, "loss": 0.752506427704149, "perplexity": 2.122312779350542, "bpc": 1.085637291485845, "top1_next_char_accuracy": 0.762500390625, "grad_norm_mean": 0.5815070654365091}
+{"epoch": 9, "train_loss": 0.8062398185809301, "loss": 0.7466633145216923, "perplexity": 2.109948025081294, "bpc": 1.077207461074162, "top1_next_char_accuracy": 0.764093359375, "grad_norm_mean": 0.5838899081972113}
+{"epoch": 10, "train_loss": 0.8011542576212038, "loss": 0.7453272915949487, "perplexity": 2.1071309683907375, "bpc": 1.0752799874232348, "top1_next_char_accuracy": 0.76476953125, "grad_norm_mean": 0.5818307860799119}

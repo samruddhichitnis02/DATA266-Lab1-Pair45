@@ -1,0 +1,3 @@
+device=mps
+parameter_count=108608
+{"epoch": 1, "train_loss": 3.9220746326446534, "loss": 3.794779130390712, "perplexity": 44.46841359965162, "bpc": 5.474709032683614, "top1_next_char_accuracy": 0.1971875, "grad_norm_mean": 1.7883372592926026}

@@ -1,0 +1,12 @@
+device=mps
+parameter_count=3254016
+{"epoch": 1, "train_loss": 2.1233073487467897, "loss": 1.2350773879676868, "perplexity": 3.438644620127294, "bpc": 1.7818400227350761, "top1_next_char_accuracy": 0.619975, "grad_norm_mean": 1.2161947198007172}
+{"epoch": 2, "train_loss": 1.1479662332638516, "loss": 0.9555375887330171, "perplexity": 2.600067974523059, "bpc": 1.3785493406481217, "top1_next_char_accuracy": 0.70077578125, "grad_norm_mean": 0.8352959098452875}
+{"epoch": 3, "train_loss": 0.9866400484999097, "loss": 0.8774135450648654, "perplexity": 2.404672080182508, "bpc": 1.2658401702738864, "top1_next_char_accuracy": 0.72428515625, "grad_norm_mean": 0.6713828033388081}
+{"epoch": 4, "train_loss": 0.9211654377456514, "loss": 0.8337446322107012, "perplexity": 2.301922474344611, "bpc": 1.2028392462581714, "top1_next_char_accuracy": 0.7371703125, "grad_norm_mean": 0.6094840173910462}
+{"epoch": 5, "train_loss": 0.8820398396509089, "loss": 0.8067349362525211, "perplexity": 2.240580392841735, "bpc": 1.1638724918433863, "top1_next_char_accuracy": 0.7456296875, "grad_norm_mean": 0.5817360910786624}
+{"epoch": 6, "train_loss": 0.8527012450986388, "loss": 0.7819005729286534, "perplexity": 2.185622255060315, "bpc": 1.1280440790324076, "top1_next_char_accuracy": 0.75343828125, "grad_norm_mean": 0.573834527019347}
+{"epoch": 7, "train_loss": 0.8306686372918649, "loss": 0.7648083396777985, "perplexity": 2.1485825371686778, "bpc": 1.1033851988836818, "top1_next_char_accuracy": 0.758640625, "grad_norm_mean": 0.5765332862191375}
+{"epoch": 8, "train_loss": 0.8135539900394716, "loss": 0.7518310600025638, "perplexity": 2.120879921754041, "bpc": 1.0846629418519915, "top1_next_char_accuracy": 0.762651953125, "grad_norm_mean": 0.581286504607283}
+{"epoch": 9, "train_loss": 0.805740150021805, "loss": 0.7460364706956657, "perplexity": 2.1086258316362283, "bpc": 1.0763031165949415, "top1_next_char_accuracy": 0.76418359375, "grad_norm_mean": 0.5835442269984835}
+{"epoch": 10, "train_loss": 0.8006320122488783, "loss": 0.7447860286493969, "perplexity": 2.105990765078861, "bpc": 1.0744991100558703, "top1_next_char_accuracy": 0.76490625, "grad_norm_mean": 0.5813924968814667}
