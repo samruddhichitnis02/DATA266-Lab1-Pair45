@@ -1,35 +1,71 @@
 # Task 1 Results — Nikhil Kanaparthi
 
-Run this file only after the training run. Replace each placeholder using the
-generated `metrics_report.json`, `config.json`, loss plot, raw log, and text
-outputs. Keep the raw log unchanged.
-
 ## Model and preprocessing
 
-- Dataset: TinyStories, character level.
-- Member-specific split: 100,000 training stories and 10,000 validation stories.
-- Context length: 256 characters.
-- Architecture: 4 decoder-only blocks, 256 hidden dimensions, 4 heads,
-  pre-LayerNorm, causal self-attention, GELU feed-forward network, residual
-  connections, tied input/output embeddings.
-- Optimizer/schedule: AdamW, learning rate 3e-4, 10% warm-up, cosine decay.
-- Hardware: record the exact GPU/CPU here.
+I trained a character-level decoder-only GPT model on TinyStories. I created
+the character vocabulary with `char_to_idx` and `idx_to_char`, converted each
+story into integer tokens, and sampled fixed-length next-character prediction
+windows with a context length of 256. I used 100,000 stories for training and
+10,000 stories for validation.
 
-## Metrics
+The model has four decoder blocks, 256 hidden dimensions, four attention heads,
+pre-LayerNorm, causal self-attention, GELU feed-forward layers, residual
+connections, and tied input/output embeddings. I trained it with AdamW at a
+learning rate of 3e-4, 0.1 weight decay, 1.0 gradient clipping, 10% warm-up,
+and cosine learning-rate decay.
 
-Copy the final values from `metrics_report.json` into the team's comparison
-table. Required metrics include train/validation cross-entropy, perplexity,
-bits-per-character, generalization gap, top-1 accuracy, Distinct-1/2/3,
-repeated 4-gram rate, gradient statistics, parameter count, throughput, peak
-memory, and training time.
+## Final evaluation
 
-## Generation examples
+The model was trained for 10 epochs on Apple MPS. It contains 3,254,016
+trainable parameters and required 5,561.93 seconds, approximately 92.7
+minutes, for training.
 
-See `outputs/greedy.txt` and `outputs/sampled.txt`. Paste representative
-snippets into the report and reference the corresponding checkpoint.
+| Metric | Value |
+|---|---:|
+| Training cross-entropy loss | 0.8006 |
+| Validation cross-entropy loss | 0.7448 |
+| Perplexity | 2.1060 |
+| Bits per character | 1.0745 |
+| Generalization gap | -0.0558 |
+| Top-1 next-character accuracy | 76.49% |
+| Greedy Distinct-1 | 0.0918 |
+| Greedy Distinct-2 | 0.4254 |
+| Greedy Distinct-3 | 0.6274 |
+| Greedy repeated 4-gram rate | 0.2907 |
+| Sampled Distinct-1 | 0.1076 |
+| Sampled Distinct-2 | 0.4730 |
+| Sampled Distinct-3 | 0.7293 |
+| Sampled repeated 4-gram rate | 0.1597 |
+| Mean gradient norm | 0.6811 |
+| Maximum gradient norm | 7.2606 |
+| NaN count | 0 |
+| Parameter count | 3,254,016 |
+| Training throughput | 46,027.20 tokens/sec |
+| Generation throughput | 313.06 tokens/sec |
+| Total training time | 5,561.93 seconds |
+| Peak memory | Not available through the PyTorch MPS peak-memory API |
+| Hardware | Apple MPS |
 
-## Three failure cases
+The validation loss was slightly lower than the training loss. This is
+consistent with dropout being active during training and disabled during
+validation. The negative generalization gap does not indicate obvious
+overfitting in this run. The zero NaN count and stable gradient statistics also
+show that the optimization remained numerically stable.
 
-Complete `failure_analysis.md` with three actual snippets from the generated
-files. For each, label the failure type, explain what happened, and propose a
-testable improvement.
+## Generated text
+
+The greedy sample produced a recognizable children's story about Lily, her
+mother, and a park. However, it repeated the phrase “wanted to play with it.”
+The temperature-based sample was more diverse and introduced dialogue, but it
+also contained awkward grammar and repeated references to a button. The full
+outputs are stored in `outputs/greedy.txt` and `outputs/sampled.txt`, and the
+loss plot is stored in `outputs/loss_curves.png`.
+
+## Limitations and next steps
+
+The model learned local spelling and story patterns effectively, but its
+long-range narrative consistency remains limited. A larger context length,
+additional training data, more training steps, and repetition-aware sampling
+would be reasonable next experiments. Since MPS does not expose the same peak
+memory API as CUDA in this environment, peak memory is reported as unavailable
+rather than estimated or fabricated.
