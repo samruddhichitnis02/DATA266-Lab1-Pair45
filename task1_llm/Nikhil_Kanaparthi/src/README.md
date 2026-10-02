@@ -1,12 +1,11 @@
-# How to run
+# Task 1 Source Code
 
-From this member folder:
+`train_task1.py` contains my complete character-level language-modeling
+implementation. The attention scores are calculated explicitly and masked
+with a lower-triangular causal mask. The file also contains the data loading,
+training loop, validation evaluation, text generation, loss-curve export, and
+Task 1 metric calculations.
 
-```bash
-pip install -r requirements.txt
-python src/train_task1.py --smoke-test
-python src/train_task1.py --epochs 10 --train-stories 100000 --val-stories 10000
-```
-
-The smoke test checks the end-to-end pipeline. Only the second command is the
-required training run for the report.
+The script supports a short smoke test for debugging and a full 10-epoch run.
+The full experiment configuration and generated evidence are stored in the
+member directory rather than being hard-coded into the report.
