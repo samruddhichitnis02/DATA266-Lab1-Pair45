@@ -1,0 +1,24 @@
+{
+  "seed": 266,
+  "device": "mps",
+  "hardware": {
+    "operating_system": "Darwin",
+    "machine": "arm64",
+    "processor": "arm"
+  },
+  "packages": {
+    "torch": "2.14.1",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "sklearn": "1.8.0",
+    "scipy": "1.16.1",
+    "matplotlib": "3.10.8"
+  },
+  "model_checkpoints": [
+    "checkpoints/baseline_mean.pt",
+    "checkpoints/experimental_cnn.pt",
+    "checkpoints/experimental_bigru.pt"
+  ],
+  "metrics_source": "metrics_report.csv and metrics_report.json",
+  "raw_log_instruction": "Run with 2>&1 | tee raw_logs/task2_full_run.log; do not edit the resulting log."
+}

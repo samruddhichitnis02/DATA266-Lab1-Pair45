@@ -1,0 +1,30 @@
+{
+  "seed": 266,
+  "device": "mps",
+  "operating_system": "Darwin",
+  "machine": "arm64",
+  "processor": "arm",
+  "vocabulary_size": 30000,
+  "max_length": 200,
+  "min_frequency": 2,
+  "batch_size": 128,
+  "epochs": 5,
+  "validation_fraction": 0.1,
+  "train_examples": 503975,
+  "validation_examples": 55997,
+  "test_examples": 38000,
+  "train_cleaning": {
+    "original_rows": 560000,
+    "missing_rows": 0,
+    "malformed_label_rows": 0,
+    "empty_after_preprocessing": 28,
+    "final_rows": 559972
+  },
+  "test_cleaning": {
+    "original_rows": 38000,
+    "missing_rows": 0,
+    "malformed_label_rows": 0,
+    "empty_after_preprocessing": 0,
+    "final_rows": 38000
+  }
+}

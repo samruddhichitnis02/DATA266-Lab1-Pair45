@@ -1,0 +1,18 @@
+{
+  "train_class_counts": {
+    "0": 251980,
+    "1": 251995
+  },
+  "test_class_counts": {
+    "0": 19000,
+    "1": 19000
+  },
+  "train_length_statistics": {
+    "min": 1,
+    "median": 60.0,
+    "mean": 81.70540602212411,
+    "p90": 172.0,
+    "p99": 371.0,
+    "max": 987
+  }
+}

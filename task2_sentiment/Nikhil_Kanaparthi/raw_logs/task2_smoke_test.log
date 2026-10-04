@@ -1,0 +1,15 @@
+Downloading Yelp Polarity data from https://s3.amazonaws.com/fast-ai-nlp/yelp_review_polarity_csv.tgz
+
+=== baseline_mean ===
+baseline_mean epoch 1/1 train_loss=0.6946 val_loss=0.6837 train_acc=0.5190 val_acc=0.5750
+
+=== experimental_cnn ===
+experimental_cnn epoch 1/1 train_loss=0.7496 val_loss=0.6285 train_acc=0.5338 val_acc=0.6500
+
+=== experimental_bigru ===
+experimental_bigru epoch 1/1 train_loss=0.6844 val_loss=0.6873 train_acc=0.5449 val_acc=0.5750
+
+Task 2 complete.
+Device: mps
+Metrics: /Users/nikhilkanaparthi/Desktop/DATA266-Lab1-Pair45/task2_sentiment/Nikhil_Kanaparthi/metrics_report.csv
+Manual review worksheet: /Users/nikhilkanaparthi/Desktop/DATA266-Lab1-Pair45/task2_sentiment/Nikhil_Kanaparthi/error_review.csv

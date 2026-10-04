@@ -1,0 +1,26 @@
+
+=== baseline_mean ===
+baseline_mean epoch 1/5 train_loss=0.2504 val_loss=0.1876 train_acc=0.9030 val_acc=0.9296
+baseline_mean epoch 2/5 train_loss=0.1861 val_loss=0.1805 train_acc=0.9316 val_acc=0.9326
+baseline_mean epoch 3/5 train_loss=0.1754 val_loss=0.1786 train_acc=0.9360 val_acc=0.9331
+baseline_mean epoch 4/5 train_loss=0.1699 val_loss=0.1783 train_acc=0.9385 val_acc=0.9337
+baseline_mean epoch 5/5 train_loss=0.1664 val_loss=0.1782 train_acc=0.9399 val_acc=0.9337
+
+=== experimental_cnn ===
+experimental_cnn epoch 1/5 train_loss=0.2371 val_loss=0.1638 train_acc=0.8999 val_acc=0.9354
+experimental_cnn epoch 2/5 train_loss=0.1597 val_loss=0.1452 train_acc=0.9370 val_acc=0.9429
+experimental_cnn epoch 3/5 train_loss=0.1301 val_loss=0.1398 train_acc=0.9501 val_acc=0.9451
+experimental_cnn epoch 4/5 train_loss=0.1058 val_loss=0.1392 train_acc=0.9599 val_acc=0.9471
+experimental_cnn epoch 5/5 train_loss=0.0891 val_loss=0.1424 train_acc=0.9668 val_acc=0.9470
+
+=== experimental_bigru ===
+experimental_bigru epoch 1/5 train_loss=0.2117 val_loss=0.1673 train_acc=0.9148 val_acc=0.9324
+experimental_bigru epoch 2/5 train_loss=0.1307 val_loss=0.1353 train_acc=0.9498 val_acc=0.9468
+experimental_bigru epoch 3/5 train_loss=0.1006 val_loss=0.1317 train_acc=0.9622 val_acc=0.9505
+experimental_bigru epoch 4/5 train_loss=0.0759 val_loss=0.1426 train_acc=0.9726 val_acc=0.9500
+experimental_bigru epoch 5/5 train_loss=0.0588 val_loss=0.1512 train_acc=0.9798 val_acc=0.9496
+
+Task 2 complete.
+Device: mps
+Metrics: /Users/nikhilkanaparthi/Desktop/DATA266-Lab1-Pair45/task2_sentiment/Nikhil_Kanaparthi/metrics_report.csv
+Manual review worksheet: /Users/nikhilkanaparthi/Desktop/DATA266-Lab1-Pair45/task2_sentiment/Nikhil_Kanaparthi/error_review.csv
