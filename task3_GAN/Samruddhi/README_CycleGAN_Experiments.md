@@ -17,13 +17,8 @@ The two image domains are unpaired:
 
 The model learns two mappings:
 
-$$
-G_{AB}: A \rightarrow B
-$$
-
-$$
-G_{BA}: B \rightarrow A
-$$
+- `G_AB`: photographs → Monet paintings
+- `G_BA`: Monet paintings → photographs
 
 Because the domains are unpaired, the model is trained with adversarial and cycle-consistency objectives rather than pixel-level paired supervision.
 
@@ -61,7 +56,9 @@ Each generator used the following 256×256 architecture:
 | Upsampling 2 | Transposed convolution, 128→64 channels | Restore the original image size |
 | Output head | Reflection padding → 7×7 convolution → Tanh | Produce a three-channel image in `[-1, 1]` |
 
-The nine residual blocks were selected because they are the standard CycleGAN capacity for 256×256 images. Instance normalization was used to reduce instance-specific contrast and lighting variation, which is useful for artistic style transfer.
+The nine residual blocks were selected because they are the standard CycleGAN capacity for 256×256 images.
+
+Instance normalization was used to reduce instance-specific contrast and lighting variation, which is useful for artistic style transfer.
 
 ### Discriminators
 
@@ -70,40 +67,46 @@ Each domain had its own PatchGAN discriminator:
 - `D_A`: distinguishes real and generated photographs
 - `D_B`: distinguishes real and generated Monet paintings
 
-The discriminator used a 70×70 PatchGAN design with convolutional feature widths of 64, 128, 256, and 512. Rather than producing one score for the whole image, it classified local image patches. This encouraged realistic texture and brush-stroke structure.
+The discriminator used a 70×70 PatchGAN design with convolutional feature widths of 64, 128, 256, and 512.
+
+Rather than producing one score for the whole image, it classified local image patches. This encouraged realistic texture and brush-stroke structure.
 
 ## Training Objective
 
-The generator objective combined three components:
+The generator loss combined three components:
 
-$$
-\mathcal{L}_G =
-\mathcal{L}_{GAN}
-+ \lambda_{cycle}\mathcal{L}_{cycle}
-+ \lambda_{identity}\mathcal{L}_{identity}
-$$
+- Adversarial loss
+- Cycle-consistency loss
+- Identity loss
+
+In plain form:
+
+`Generator loss = Adversarial loss + Cycle weight × Cycle loss + Identity weight × Identity loss`
 
 ### Adversarial Loss
 
-Least-squares adversarial loss was used to make translated images appear to belong to the target domain. This is generally more stable for image translation than a binary cross-entropy GAN loss.
+Least-squares adversarial loss was used to make translated images appear to belong to the target domain.
+
+This is generally more stable for image translation than a binary cross-entropy GAN loss.
 
 ### Cycle-Consistency Loss
 
-The cycle constraint required the translated image to preserve the original content:
+The cycle constraint required the translated image to preserve the original content.
 
-$$
-G_{BA}(G_{AB}(A)) \approx A
-$$
+The two reconstruction paths were:
 
-$$
-G_{AB}(G_{BA}(B)) \approx B
-$$
+- Photograph → Monet → Photograph ≈ Original photograph
+- Monet → Photograph → Monet ≈ Original Monet painting
 
 An L1 cycle-consistency loss was used with `lambda_cycle = 10`.
 
 ### Identity Loss
 
-Identity loss encouraged a generator to preserve an image that was already in its target domain. The baseline and v3 runs used `lambda_identity = 5`. The fine-tuning run reduced this to `2` to allow stronger style changes, especially in the Photo→Monet direction.
+Identity loss encouraged a generator to preserve an image that was already in its target domain.
+
+The baseline and v3 runs used `lambda_identity = 5`.
+
+The fine-tuning run reduced this value to `2` to allow stronger style changes, especially in the photograph-to-Monet direction.
 
 ### Other Training Settings
 
@@ -111,7 +114,7 @@ Identity loss encouraged a generator to preserve an image that was already in it
 |---|---:|
 | Image size | 256×256 |
 | Optimizer | Adam |
-| Adam β₁, β₂ | 0.5, 0.999 |
+| Adam β1, β2 | 0.5, 0.999 |
 | Initial learning rate | 0.0002 |
 | Cycle weight | 10 |
 | Identity weight | 5 in baseline/v3; 2 in fine-tuning |
@@ -122,13 +125,11 @@ Identity loss encouraged a generator to preserve an image that was already in it
 
 ## Experiment History
 
-The competition score is negative, so a score closer to zero is better. The submission files contain FID and MiFID. For consistent comparison, the equivalent score reported below is:
+The competition score is negative, so a score closer to zero is better.
 
-$$
-\text{Equivalent score}
-=
--\frac{FID + MiFID}{2}
-$$
+The submission files contain FID and MiFID. For consistent comparison, the equivalent score was calculated as:
+
+`Equivalent score = -(FID + MiFID) / 2`
 
 ### Experiment 0 — Teaching Assistant Reference Baseline
 
@@ -140,11 +141,15 @@ This was the reference submission supplied for comparison.
 | MiFID | 0.4192 |
 | Equivalent score | −78.2277 |
 
-This established the starting point. The relatively high FID indicated a large distribution mismatch between generated and real images.
+This established the starting point.
+
+The relatively high FID indicated a large distribution mismatch between generated and real images.
 
 ### Experiment 1 — Standard CycleGAN with Early Stopping
 
-This run used the original 9-residual-block generator and standard 70×70 PatchGAN discriminator. It trained for up to 100 epochs with early stopping. Training stopped after the monitored score failed to improve, while the best checkpoint was from approximately epoch 53.
+This run used the original 9-residual-block generator and standard 70×70 PatchGAN discriminator.
+
+It trained for up to 100 epochs with early stopping. Training stopped after the monitored score failed to improve, while the best checkpoint was from approximately epoch 53.
 
 | Configuration | Value |
 |---|---|
@@ -162,7 +167,9 @@ This run used the original 9-residual-block generator and standard 70×70 PatchG
 | MiFID | 0.2222 |
 | Equivalent score | **−50.2053** |
 
-This was the best overall submission. It reduced FID substantially relative to the reference baseline and produced the strongest MiFID among the recorded submissions.
+This was the best overall submission.
+
+It reduced FID substantially relative to the reference baseline and produced the strongest MiFID among the recorded submissions.
 
 ### Experiment 2 — Bilinear Upsampling and Spectral-Normalized Discriminator
 
@@ -192,13 +199,17 @@ The purpose was to reduce checkerboard artifacts and give the discriminator more
 | MiFID | 0.4174 |
 | Equivalent score | **−60.4655** |
 
-This experiment did not improve the result. The larger and spectrally normalized discriminator appears to have made the adversarial game more difficult for the generator under this training schedule.
+This experiment did not improve the result.
+
+The larger and spectrally normalized discriminator appears to have made the adversarial game more difficult for the generator under this training schedule.
 
 The result demonstrates that a theoretically attractive architectural modification is not automatically better. Generator and discriminator capacity must remain balanced, and the learning-rate schedule must be retuned together with the architecture.
 
 ### Experiment 3 — Standard Architecture with Batch Size 1 and 150 Epochs
 
-The third experiment returned to the standard architecture and changed the training procedure. It used batch size 1, a fixed seed, a 50-image replay buffer, linear learning-rate decay, periodic local FID evaluation, and checkpoint saving.
+The third experiment returned to the standard architecture and changed the training procedure.
+
+It used batch size 1, a fixed seed, a 50-image replay buffer, linear learning-rate decay, periodic local FID evaluation, and checkpoint saving.
 
 | Configuration | Value |
 |---|---|
@@ -219,13 +230,17 @@ The third experiment returned to the standard architecture and changed the train
 | MiFID | 0.4115 |
 | Equivalent score | **−51.1772** |
 
-This run was much better than the modified architecture experiment and achieved a similar score to the early-stopping baseline. However, it did not beat Experiment 1 because its MiFID was substantially higher.
+This run was much better than the modified architecture experiment and achieved a similar score to the early-stopping baseline.
+
+However, it did not beat Experiment 1 because its MiFID was substantially higher.
 
 This showed that longer training alone did not guarantee better test performance.
 
 ### Experiment 4 — Fine-Tuning the Epoch-150 Checkpoint
 
-The final experiment resumed from the epoch-150 checkpoint and performed 11 additional fine-tuning epochs, ending at epoch 161. The learning rates and identity weight were changed to make the late-stage update more conservative and to encourage stronger style transfer.
+The final experiment resumed from the epoch-150 checkpoint and performed 11 additional fine-tuning epochs, ending at epoch 161.
+
+The learning rates and identity weight were changed to make the late-stage update more conservative and to encourage stronger style transfer.
 
 | Configuration | Value |
 |---|---|
@@ -240,7 +255,9 @@ The final experiment resumed from the epoch-150 checkpoint and performed 11 addi
 | Decay start | Epoch 150 |
 | Seed | 42 |
 
-The best internal fine-tuning point was around epoch 154, but it still did not outperform the earlier standard-architecture submission. The final epoch-161 submission produced:
+The best internal fine-tuning point was around epoch 154, but it still did not outperform the earlier standard-architecture submission.
+
+The final epoch-161 submission produced:
 
 | Metric | Result |
 |---|---:|
@@ -248,7 +265,9 @@ The best internal fine-tuning point was around epoch 154, but it still did not o
 | MiFID | 0.4090 |
 | Equivalent score | **−53.7173** |
 
-Fine-tuning improved MiFID slightly relative to Experiment 3, but FID became worse. Because FID dominates the combined score, the final result declined.
+Fine-tuning improved MiFID slightly relative to Experiment 3, but FID became worse.
+
+Because FID dominates the combined score, the final result declined.
 
 The experiment therefore showed that late fine-tuning from a converged checkpoint was not sufficient to move the model into a better solution.
 
@@ -272,11 +291,15 @@ The modified larger discriminator did not improve the score despite adding spect
 
 ### 2. Early Stopping Preserved a Strong Checkpoint
 
-The best model was not the final epoch. Selecting the checkpoint around epoch 53 avoided later degradation and produced the best submission.
+The best model was not the final epoch.
+
+Selecting the checkpoint around epoch 53 avoided later degradation and produced the best submission.
 
 ### 3. Replay-Buffer Training and Learning-Rate Decay Were Useful
 
-The v3 training recipe incorporated common CycleGAN stabilization techniques. These helped produce a competitive result and made the training process more reproducible.
+The v3 training recipe incorporated common CycleGAN stabilization techniques.
+
+These helped produce a competitive result and made the training process more reproducible.
 
 ### 4. Reducing Identity Loss Changed the Trade-Off
 
@@ -288,7 +311,9 @@ The generator became more content-preserving without producing a sufficiently re
 
 ### 1. The Larger Spectral-Normalized Discriminator
 
-The second architecture produced a worse FID. The discriminator likely became too strong or too global for the generator and schedule used in that experiment.
+The second architecture produced a worse FID.
+
+The discriminator likely became too strong or too global for the generator and schedule used in that experiment.
 
 The change also altered several interacting components at once, making it difficult to isolate the source of the degradation.
 
@@ -300,7 +325,9 @@ Once the model reached a stable equilibrium, additional epochs mainly moved arou
 
 ### 3. Fine-Tuning a Late Checkpoint
 
-Fine-tuning from epoch 150 changed the metrics only modestly. It did not recover the earlier best score because the model had already settled into a suboptimal solution.
+Fine-tuning from epoch 150 changed the metrics only modestly.
+
+It did not recover the earlier best score because the model had already settled into a suboptimal solution.
 
 A new training run with a different controlled configuration would be more promising than repeatedly extending the same checkpoint.
 
