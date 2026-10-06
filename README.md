@@ -14,14 +14,9 @@ Both members contributed to implementation, experimentation, evaluation, documen
 ```text
 DATA266-Lab1-Pair45/
 ├── task1_llm/
-│   ├── member_folder_1/
-│   └── member_folder_2/
 ├── task2_sentiment/
-│   ├── member_folder_1/
-│   └── member_folder_2/
 └── task3_GAN/
-    ├── member_folder_1/
-    └── member_folder_2/
+
 ```
 
 Each task folder contains the work and results contributed by the pair members.
