@@ -53,3 +53,7 @@ config.local.json
 
 # Ignore all files inside any data folder
 **/data/**
+
+
+**/checkpoints/
+*.pth
