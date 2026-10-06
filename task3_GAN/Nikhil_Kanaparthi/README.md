@@ -50,6 +50,5 @@ images.
 - `run_manifest.json`, `config.json`, `history.json`, and `raw_logs/`: evidence
   and reproducibility information.
 
-Before final submission, check that the model lineup differs from the
-teammate's architecture/hyperparameters and record the real Kaggle score and
-rank after submitting the direct output of this model.
+
+
