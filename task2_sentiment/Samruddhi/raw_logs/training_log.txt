@@ -1,0 +1,35 @@
+Hardware: CPU: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel (20 threads, 16.8 GB RAM) | GPU: NVIDIA GeForce RTX 3060 Laptop GPU (6.4 GB)
+
+== baseline_meanmax_mlp ==
+{'type': 'MeanMaxMLP', 'emb_dim': 128, 'hidden': 256, 'dropout': 0.35}
+{'hardware': 'CPU: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel (20 threads, 16.8 GB RAM) | GPU: NVIDIA GeForce RTX 3060 Laptop GPU (6.4 GB)', 'device': 'cuda', 'n_params': 3906305, 'train_time_s': 294.6332018375397, 'examples_per_sec': 13684.812081101569, 'peak_gpu_mem_mb': 294.517578125, 'peak_cpu_rss_mb': 2571.1796875, 'best_val_acc': 0.9342857142857143, 'epochs_run': 8}
+ epoch     loss  val_acc
+     1 0.212943 0.927821
+     2 0.200434 0.928429
+     3 0.178405 0.933571
+     4 0.137796 0.933929
+     5 0.242050 0.934054
+     6 0.108817 0.933375
+     7 0.198678 0.934286
+     8 0.177016 0.934250
+
+== exp1_transformer ==
+{'type': 'TinyTransformer', 'emb_dim': 128, 'heads': 4, 'layers': 2, 'ff': 256, 'max_len': 200, 'dropout': 0.2}
+{'hardware': 'CPU: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel (20 threads, 16.8 GB RAM) | GPU: NVIDIA GeForce RTX 3060 Laptop GPU (6.4 GB)', 'device': 'cuda', 'n_params': 4130945, 'train_time_s': 1294.7820875644684, 'examples_per_sec': 2335.528139478862, 'peak_gpu_mem_mb': 1979.77783203125, 'peak_cpu_rss_mb': 2564.640625, 'best_val_acc': 0.9378392857142858, 'epochs_run': 6}
+ epoch     loss  val_acc
+     1 0.269649 0.922554
+     2 0.184241 0.929857
+     3 0.172711 0.933196
+     4 0.235387 0.934286
+     5 0.203298 0.936304
+     6 0.184919 0.937839
+
+== exp2_bilstm_attn ==
+{'type': 'BiLSTMAttn', 'emb_dim': 160, 'hidden': 128, 'layers': 1, 'dropout': 0.4}
+{'hardware': 'CPU: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel (20 threads, 16.8 GB RAM) | GPU: NVIDIA GeForce RTX 3060 Laptop GPU (6.4 GB)', 'device': 'cuda', 'n_params': 5097794, 'train_time_s': 3353.6421608924866, 'examples_per_sec': 751.4218509613936, 'peak_gpu_mem_mb': 892.3251953125, 'peak_cpu_rss_mb': 1336.265625, 'best_val_acc': 0.95625, 'epochs_run': 5}
+ epoch     loss  val_acc
+     1 0.216022 0.947161
+     2 0.127528 0.951893
+     3 0.108898 0.949786
+     4 0.037838 0.955214
+     5 0.165930 0.956250

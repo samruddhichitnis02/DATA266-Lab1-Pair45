@@ -1,0 +1,64 @@
+{
+  "seed": 42,
+  "device": "cuda",
+  "hardware": "CPU: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel (20 threads, 16.8 GB RAM) | GPU: NVIDIA GeForce RTX 3060 Laptop GPU (6.4 GB)",
+  "operating_system": "Windows",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "vocabulary_size": 30002,
+  "max_length": 200,
+  "min_frequency": 2,
+  "max_vocab": 30000,
+  "validation_fraction": 0.1,
+  "train_examples": 504000,
+  "validation_examples": 56000,
+  "test_examples": 38000,
+  "train_cleaning": {
+    "original_rows": 560000,
+    "subsample": null,
+    "empty_after_preprocessing": 32
+  },
+  "test_cleaning": {
+    "original_rows": 38000,
+    "empty_after_preprocessing": 0
+  },
+  "models": {
+    "baseline_meanmax_mlp": {
+      "architecture": {
+        "type": "MeanMaxMLP",
+        "emb_dim": 128,
+        "hidden": 256,
+        "dropout": 0.35
+      },
+      "lr": 0.0015,
+      "epochs": 8,
+      "batch_size": 256
+    },
+    "exp1_transformer": {
+      "architecture": {
+        "type": "TinyTransformer",
+        "emb_dim": 128,
+        "heads": 4,
+        "layers": 2,
+        "ff": 256,
+        "max_len": 200,
+        "dropout": 0.2
+      },
+      "lr": 0.0005,
+      "epochs": 6,
+      "batch_size": 128
+    },
+    "exp2_bilstm_attn": {
+      "architecture": {
+        "type": "BiLSTMAttn",
+        "emb_dim": 160,
+        "hidden": 128,
+        "layers": 1,
+        "dropout": 0.4
+      },
+      "lr": 0.001,
+      "epochs": 5,
+      "batch_size": 128
+    }
+  }
+}

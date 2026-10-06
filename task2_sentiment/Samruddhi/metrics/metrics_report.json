@@ -1,0 +1,172 @@
+{
+  "models": [
+    {
+      "model": "baseline_meanmax_mlp",
+      "accuracy": 0.9358421052631579,
+      "precision_macro": 0.9359581594989691,
+      "recall_macro": 0.9358421052631578,
+      "f1_macro": 0.9358378351911094,
+      "precision_micro": 0.9358421052631579,
+      "recall_micro": 0.9358421052631579,
+      "f1_micro": 0.9358421052631579,
+      "precision_weighted": 0.9359581594989692,
+      "recall_weighted": 0.9358421052631579,
+      "f1_weighted": 0.9358378351911093,
+      "roc_auc": 0.9831010263157894,
+      "pr_auc": 0.9835214570988284,
+      "mcc": 0.8718002570375447,
+      "brier": 0.0480552381445288,
+      "ece": 0.00943881906647428,
+      "accuracy_ci95": "[0.9335, 0.9383]",
+      "macro_f1_ci95": "[0.9335, 0.9383]",
+      "mcc_ci95": "[0.8672, 0.8766]",
+      "slice_macroF1 | short (<=q25 words)": 0.9340058063446004,
+      "slice_err | short (<=q25 words)": 0.06350364963503652,
+      "slice_macroF1 | long (>=q75 words)": 0.9294858106259145,
+      "slice_err | long (>=q75 words)": 0.06674350377200333,
+      "slice_macroF1 | has negation": 0.9278702945743587,
+      "slice_err | has negation": 0.06952306821398246,
+      "slice_macroF1 | has contrast (but/however/although)": 0.9250630586990864,
+      "slice_err | has contrast (but/however/although)": 0.07404426559356136,
+      "slice_macroF1 | exclamation-heavy (>=3 '!')": 0.9506812644534999,
+      "slice_err | exclamation-heavy (>=3 '!')": 0.04809907834101379,
+      "hardware": "CPU: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel (20 threads, 16.8 GB RAM) | GPU: NVIDIA GeForce RTX 3060 Laptop GPU (6.4 GB)",
+      "device": "cuda",
+      "n_params": 3906305,
+      "train_time_s": 294.6332018375397,
+      "examples_per_sec": 13684.812081101569,
+      "peak_gpu_mem_mb": 294.517578125,
+      "peak_cpu_rss_mb": 2571.1796875,
+      "best_val_acc": 0.9342857142857143,
+      "epochs_run": 8
+    },
+    {
+      "model": "exp1_transformer",
+      "accuracy": 0.9379473684210526,
+      "precision_macro": 0.9380811275739771,
+      "recall_macro": 0.9379473684210526,
+      "f1_macro": 0.9379426314325534,
+      "precision_micro": 0.9379473684210526,
+      "recall_micro": 0.9379473684210526,
+      "f1_micro": 0.9379473684210526,
+      "precision_weighted": 0.9380811275739769,
+      "recall_weighted": 0.9379473684210526,
+      "f1_weighted": 0.9379426314325534,
+      "roc_auc": 0.9851815484764541,
+      "pr_auc": 0.985752594047136,
+      "mcc": 0.876028485783312,
+      "brier": 0.046262483231867955,
+      "ece": 0.017071320660804405,
+      "accuracy_ci95": "[0.9356, 0.9403]",
+      "macro_f1_ci95": "[0.9356, 0.9403]",
+      "mcc_ci95": "[0.8713, 0.8807]",
+      "slice_macroF1 | short (<=q25 words)": 0.934485721356225,
+      "slice_err | short (<=q25 words)": 0.06319082377476537,
+      "slice_macroF1 | long (>=q75 words)": 0.9334164351182352,
+      "slice_err | long (>=q75 words)": 0.0632858340318525,
+      "slice_macroF1 | has negation": 0.9309188777860926,
+      "slice_err | has negation": 0.06655108972544577,
+      "slice_macroF1 | has contrast (but/however/although)": 0.9279132083846307,
+      "slice_err | has contrast (but/however/although)": 0.07122736418511066,
+      "slice_macroF1 | exclamation-heavy (>=3 '!')": 0.9534098772312692,
+      "slice_err | exclamation-heavy (>=3 '!')": 0.045362903225806495,
+      "hardware": "CPU: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel (20 threads, 16.8 GB RAM) | GPU: NVIDIA GeForce RTX 3060 Laptop GPU (6.4 GB)",
+      "device": "cuda",
+      "n_params": 4130945,
+      "train_time_s": 1294.7820875644684,
+      "examples_per_sec": 2335.528139478862,
+      "peak_gpu_mem_mb": 1979.77783203125,
+      "peak_cpu_rss_mb": 2564.640625,
+      "best_val_acc": 0.9378392857142858,
+      "epochs_run": 6
+    },
+    {
+      "model": "exp2_bilstm_attn",
+      "accuracy": 0.9567894736842105,
+      "precision_macro": 0.9569410059542072,
+      "recall_macro": 0.9567894736842105,
+      "f1_macro": 0.956785890983189,
+      "precision_micro": 0.9567894736842105,
+      "recall_micro": 0.9567894736842105,
+      "f1_micro": 0.9567894736842105,
+      "precision_weighted": 0.9569410059542072,
+      "recall_weighted": 0.9567894736842105,
+      "f1_weighted": 0.956785890983189,
+      "roc_auc": 0.9920086163434905,
+      "pr_auc": 0.9922099829068103,
+      "mcc": 0.9137304670734275,
+      "brier": 0.03317293541611989,
+      "ece": 0.016432144872452092,
+      "accuracy_ci95": "[0.9547, 0.9587]",
+      "macro_f1_ci95": "[0.9547, 0.9587]",
+      "mcc_ci95": "[0.9096, 0.9176]",
+      "slice_macroF1 | short (<=q25 words)": 0.9513518864818358,
+      "slice_err | short (<=q25 words)": 0.04650677789363922,
+      "slice_macroF1 | long (>=q75 words)": 0.9513014285298597,
+      "slice_err | long (>=q75 words)": 0.04652137468566642,
+      "slice_macroF1 | has negation": 0.9551468012173008,
+      "slice_err | has negation": 0.043553637135578804,
+      "slice_macroF1 | has contrast (but/however/although)": 0.9521971480652336,
+      "slice_err | has contrast (but/however/although)": 0.04744019673597133,
+      "slice_macroF1 | exclamation-heavy (>=3 '!')": 0.9710222681995995,
+      "slice_err | exclamation-heavy (>=3 '!')": 0.02808179723502302,
+      "hardware": "CPU: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel (20 threads, 16.8 GB RAM) | GPU: NVIDIA GeForce RTX 3060 Laptop GPU (6.4 GB)",
+      "device": "cuda",
+      "n_params": 5097794,
+      "train_time_s": 3353.6421608924866,
+      "examples_per_sec": 751.4218509613936,
+      "peak_gpu_mem_mb": 892.3251953125,
+      "peak_cpu_rss_mb": 1336.265625,
+      "best_val_acc": 0.95625,
+      "epochs_run": 5
+    }
+  ],
+  "mcnemar": [
+    {
+      "comparison": "baseline_meanmax_mlp vs exp1_transformer",
+      "only_baseline_correct": 503,
+      "only_exp_correct": 583,
+      "statistic": 5.746777163904236,
+      "p_value": 0.016518934824462966
+    },
+    {
+      "comparison": "baseline_meanmax_mlp vs exp2_bilstm_attn",
+      "only_baseline_correct": 610,
+      "only_exp_correct": 1406,
+      "statistic": 313.5044642857143,
+      "p_value": 3.7654279179113644e-70
+    }
+  ],
+  "confusion_matrices": {
+    "baseline_meanmax_mlp": [
+      [
+        17936,
+        1064
+      ],
+      [
+        1374,
+        17626
+      ]
+    ],
+    "exp1_transformer": [
+      [
+        17987,
+        1013
+      ],
+      [
+        1345,
+        17655
+      ]
+    ],
+    "exp2_bilstm_attn": [
+      [
+        18006,
+        994
+      ],
+      [
+        648,
+        18352
+      ]
+    ]
+  }
+}
