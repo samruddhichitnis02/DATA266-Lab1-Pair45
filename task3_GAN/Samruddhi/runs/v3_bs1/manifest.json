@@ -1,0 +1,11 @@
+{
+  "command": "model_v3.py --config config.json",
+  "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+  "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+  "torch": "2.1.2",
+  "torchvision": "0.16.2",
+  "torchmetrics": "1.9.0",
+  "numpy": "1.26.2",
+  "cuda": "12.1",
+  "gpu": "NVIDIA GeForce RTX 4090"
+}

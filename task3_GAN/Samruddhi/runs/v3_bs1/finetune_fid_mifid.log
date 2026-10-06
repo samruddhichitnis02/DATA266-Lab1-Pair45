@@ -1,0 +1,5 @@
+2026-10-06 18:05:54,047 | Resumed from epoch 150; learning rates reset for fine-tuning.
+2026-10-06 18:05:54,050 | Training batches per epoch: 5630
+2026-10-06 18:05:54,051 | Starting at epoch 151; ending at epoch 150
+2026-10-06 18:05:54,051 | Training finished. Best average notebook FID: inf
+2026-10-06 18:05:54,051 | Per-epoch results: runs/v3_bs1/fid_mifid_every_epoch.csv
