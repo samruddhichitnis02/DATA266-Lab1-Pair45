@@ -1,0 +1,6 @@
+{
+  "saved_at": "2026-10-06 22:55:55",
+  "checkpoint": "checkpoints/cyclegan_final.pt",
+  "final_metrics": "full_metrics_report.csv",
+  "human_audit": "human_audit.csv"
+}

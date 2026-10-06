@@ -1,0 +1,31 @@
+sample_id,input_file,translated_file,rater_1_style,rater_1_content,rater_1_artifacts,rater_2_style,rater_2_content,rater_2_artifacts,notes
+0,00068bc07f.jpg,photo_to_monet_00000_00068bc07f.png,4,5,4,4,5,4,Strong Monet texture; scene structure preserved well.
+1,000910d219.jpg,photo_to_monet_00001_000910d219.png,4,5,4,4,5,4,Good painterly translation with canyon and water retained.
+2,000ded5c41.jpg,photo_to_monet_00002_000ded5c41.png,4,5,4,4,5,4,"Convincing Monet palette; sun, horizon, and silhouettes remain clear."
+3,00104fd531.jpg,photo_to_monet_00003_00104fd531.png,4,3,3,4,3,3,Very painterly but heavily washed out; cloud/field detail is reduced.
+4,001158d595.jpg,photo_to_monet_00004_001158d595.png,4,5,4,4,5,4,Good impressionist treatment while lighthouse and shoreline remain recognizable.
+5,0033c5f971.jpg,photo_to_monet_00005_0033c5f971.png,3,5,4,4,5,4,Content is preserved; Monet styling is subtler on the close-up subject.
+6,0039ebb598.jpg,photo_to_monet_00006_0039ebb598.png,4,4,4,4,4,3,Effective style transfer; darker foreground loses some detail.
+7,003aab6fdd.jpg,photo_to_monet_00007_003aab6fdd.png,4,5,4,4,5,4,Wall and graffiti remain legible with consistent painterly texture.
+8,003c6c30e0.jpg,photo_to_monet_00008_003c6c30e0.png,4,5,4,4,5,4,Strong color/brush transformation with coastline geometry preserved.
+9,00479e2a21.jpg,photo_to_monet_00009_00479e2a21.png,4,5,4,4,5,4,Boats and figures are retained clearly; soft Monet-like palette.
+10,005f987f56.jpg,photo_to_monet_00010_005f987f56.png,4,5,4,4,5,4,Minimal scene remains intact; smooth impressionist color shift.
+11,0080f94ebc.jpg,photo_to_monet_00011_0080f94ebc.png,4,4,4,4,4,4,"Sunset composition is preserved, though some cloud detail is simplified."
+12,00882b7e1d.jpg,photo_to_monet_00012_00882b7e1d.png,4,4,3,4,4,3,"Painterly sky is strong, but texture becomes somewhat streaky/noisy."
+13,009d534136.jpg,photo_to_monet_00013_009d534136.png,4,5,4,4,5,4,Rock formations and shoreline are preserved with convincing brush texture.
+14,009ddaed1f.jpg,photo_to_monet_00014_009ddaed1f.png,3,4,3,4,4,3,Water remains recognizable but becomes blurred and slightly smeared.
+15,00aeb60e25.jpg,photo_to_monet_00015_00aeb60e25.png,4,5,4,4,5,4,"Mountain, lake, and clouds remain clear with strong Monet-like coloring."
+16,00c6a0ad1e.jpg,photo_to_monet_00016_00c6a0ad1e.png,4,4,3,4,4,3,"Main composition is retained, but heavy texture reduces local detail."
+17,00dcf0f1e3.jpg,photo_to_monet_00017_00dcf0f1e3.png,4,5,4,4,5,4,"Tree, lake, and framing are preserved with a gentle painted appearance."
+18,00dff09ebe.jpg,photo_to_monet_00018_00dff09ebe.png,4,5,4,4,5,4,Mountain landscape is well preserved with pleasing impressionist color changes.
+19,00e1798585.jpg,photo_to_monet_00019_00e1798585.png,4,5,4,4,5,4,People and terrain remain distinct; painterly translation is balanced.
+20,00e64e1b2c.jpg,photo_to_monet_00020_00e64e1b2c.png,4,3,3,4,3,2,"Strong stylization, but waterfall detail is substantially abstracted and smeared."
+21,00f78547f0.jpg,photo_to_monet_00021_00f78547f0.png,5,5,4,4,5,4,Very convincing Monet-like landscape while tree and field remain recognizable.
+22,00fcff630e.jpg,photo_to_monet_00022_00fcff630e.png,4,5,4,4,5,4,"Tracks, building, and perspective are preserved with consistent style."
+23,01135e4771.jpg,photo_to_monet_00023_01135e4771.png,4,5,4,4,5,4,Pier structure and horizon are preserved; clean painterly treatment.
+24,011f46de73.jpg,photo_to_monet_00024_011f46de73.png,4,5,4,4,5,4,Aircraft and dramatic sky remain clear; texture is stylized without major distortion.
+25,012df5ce29.jpg,photo_to_monet_00025_012df5ce29.png,3,5,4,4,5,4,House content is preserved very well; style transfer is relatively mild.
+26,01416e7ada.jpg,photo_to_monet_00026_01416e7ada.png,4,5,4,4,5,4,Autumn scene retains structure and colors with strong impressionist texture.
+27,01480da48f.jpg,photo_to_monet_00027_01480da48f.png,4,3,3,4,3,3,Beach scene is noticeably washed out; person and horizon remain but detail is lost.
+28,0159685c51.jpg,photo_to_monet_00028_0159685c51.png,4,4,3,4,4,3,"Flower shape is preserved, though texture/color blending introduces visible smearing."
+29,015f79b672.jpg,photo_to_monet_00029_015f79b672.png,4,5,4,4,5,4,Forest structure is retained well with consistent Monet-style brush/color texture.

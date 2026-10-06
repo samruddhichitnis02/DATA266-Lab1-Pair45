@@ -1,0 +1,10 @@
+usage: train_cyclegan.py [-h] --data-root DATA_ROOT [--smoke-test]
+                         [--epochs EPOCHS] [--batch-size BATCH_SIZE]
+                         [--image-size IMAGE_SIZE]
+                         [--residual-blocks RESIDUAL_BLOCKS]
+                         [--max-images MAX_IMAGES] [--num-workers NUM_WORKERS]
+                         [--learning-rate LEARNING_RATE]
+                         [--lambda-cycle LAMBDA_CYCLE]
+                         [--lambda-identity LAMBDA_IDENTITY]
+                         [--decay-start-epoch DECAY_START_EPOCH] [--seed SEED]
+train_cyclegan.py: error: unrecognized arguments: --checkpoint-every 10

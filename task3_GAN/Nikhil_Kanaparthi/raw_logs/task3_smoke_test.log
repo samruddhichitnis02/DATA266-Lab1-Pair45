@@ -1,0 +1,9 @@
+Device: cuda
+Monet images used for training: 16
+Photo images used for training: 16
+Steps per epoch: 16; epochs: 1; image size: 128
+Parameters: {'G_A2B': 3117059, 'G_B2A': 3117059, 'D_A': 2764737, 'D_B': 2764737}
+epoch 1/1 G=17.9518 D_A=1.6077 D_B=1.9855 cycle=(0.4971,0.4785)
+Training and translation generation complete.
+A2B outputs: /content/task3_gan/Nikhil_Kanaparthi/outputs/pred_A2B
+B2A outputs: /content/task3_gan/Nikhil_Kanaparthi/outputs/pred_B2A
