@@ -195,25 +195,3 @@ For a command-line notebook execution after the environment is configured:
 ```bash
 jupyter nbconvert --to notebook --execute yelp_polarity_task2.ipynb --output executed_task2.ipynb
 ```
-
-## Reproducibility notes
-
-- The test set is evaluated in its official order.
-- The vocabulary is built using the training split only.
-- The random seed is recorded in `config.json` and `run_manifest.json`.
-- Raw training output is preserved in `training_log.txt`.
-- Model checkpoints are stored in the `checkpoints/` directory.
-- The full metric outputs and prediction probabilities are retained for traceability.
-- Personal file paths and credentials must not be committed.
-
-## Important notebook cleanup before submission
-
-Before committing the notebook, verify that:
-
-1. the detailed comparison section is present;
-2. no `<FILL IN>` placeholders remain;
-3. no personal Windows paths appear in cell outputs;
-4. the export cell does not overwrite the detailed `README.md` or `results.md`;
-5. only final, canonical filenames are included;
-6. no raw dataset, credentials, or API keys are included.
-
